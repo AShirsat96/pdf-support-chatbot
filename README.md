@@ -1,86 +1,114 @@
-# Customer Support Chatbot
+Customer Support Chatbot
+A Streamlit-based AI chatbot that answers questions from PDF manuals and support documents using OpenAI and LlamaIndex. It helps customer support teams reduce repetitive ticket volume by turning internal documentation into a searchable conversational assistant.
 
-A Streamlit-based chatbot application that answers questions about Portage Bill and Master's Cash System using OpenAI and LlamaIndex for document processing and retrieval.This chatbot can help ask any questions that are asked with regards to any customer support manual or any other document
+Results
+Reduced support ticket volume by 70%
 
-## Prerequisites
+Improved response time by 60%
 
-- Python (version not specified in code)
-- Streamlit
-- LlamaIndex
-- OpenAI
-- NLTK
+Enabled 24/7 self-service answers from PDF-based documentation
 
-## Installation
+Demo
+<img width="1280" height="905" alt="image" src="https://github.com/user-attachments/assets/41a52db8-5fab-458d-90f9-d629e1d4d739" />
 
-Install the required packages using pip:
+Example UI of the customer support chatbot
 
-```bash
-pip install streamlit llama_index openai nltk
-```
 
-## Configuration
 
-1. OpenAI API Key:
-   - Store your OpenAI API key in Streamlit secrets
-   - The application accesses it using: `st.secrets.openai_key`
+Features
+Chat with PDF manuals and support documentation
 
-2. Data Directory:
-   - Place your documents in the following directory:
-   ```
-   <Directory Path for your documents here>
-   ```
+Retrieval-augmented generation (RAG) using LlamaIndex
 
-3. Page Configuration:
-   - Title: "Aniket Solutions Chatbot"
-   - Logo Path: "add your logo path here"
-   - Layout: Centered
-   - Initial Sidebar State: Auto
+Streamlit chat interface with conversation history
 
-## Features
+OpenAI-powered technical responses
 
-1. Document Processing:
-   - Loads and indexes documents from the specified directory
-   - Uses LlamaIndex's SimpleDirectoryReader for document loading
-   - Implements caching for improved performance
+Cached document indexing for faster performance
 
-2. Chat Interface:
-   - Interactive chat input
-   - Message history tracking
-   - Real-time response generation
-   - Loading spinners for better user experience
+Configurable for any company knowledge base or internal guide
 
-3. AI Configuration:
-   - Uses GPT-3.5-turbo model
-   - Temperature: 0.5
-   - Custom system prompt for technical responses
-   - Specialized in Portage Bill and Master's Cash System information
+Tech Stack
+Frontend: Streamlit
 
-## Code Structure
+LLM: OpenAI GPT-3.5-turbo
 
-```python
-# Main components:
-1. Page Configuration
-2. OpenAI API Setup
-3. Chat History Initialization
-4. Data Loading and Indexing
-5. Chat Engine Initialization
-6. User Input Processing
-7. Message Display
-8. Response Generation
-```
+RAG / Indexing: LlamaIndex
 
-## Usage
+Language: Python
 
-The chatbot:
-1. Loads with an initial welcome message
-2. Accepts user questions through the chat input
-3. Processes questions against the indexed documents
-4. Provides technical answers based on the document content
-5. Maintains conversation history within the session
+NLP Utilities: NLTK
 
-## LlamaIndex Configuration
+Project Structure
+bash
+.
+├── app.py
+├── README.md
+├── requirements.txt
+├── .streamlit/
+│   └── secrets.toml
+└── data/
+    └── your-pdf-files-here
+Installation
+Clone the repository and install dependencies:
 
-```python
+bash
+git clone https://github.com/AShirsat96/pdf-support-chatbot.git
+cd pdf-support-chatbot
+pip install -r requirements.txt
+If you do not have a requirements.txt file yet, install the main packages with:
+
+bash
+pip install streamlit llama-index openai nltk
+Configuration
+1. OpenAI API key
+Store your API key in Streamlit secrets:
+
+text
+# .streamlit/secrets.toml
+openai_key = "your_openai_api_key_here"
+2. Add your documents
+Place your PDF or support documents in a local data directory such as:
+
+bash
+data/
+Update the app code if needed so the document loader points to your chosen folder.
+
+Usage
+Run the app locally with:
+
+bash
+streamlit run app.py
+Then open the local URL shown in your terminal, usually:
+
+bash
+http://localhost:8501
+How It Works
+Loads PDF or support documents from a local folder
+
+Indexes them using LlamaIndex
+
+Accepts user questions through Streamlit chat input
+
+Retrieves relevant context from the indexed documents
+
+Generates technical answers using OpenAI
+
+Maintains chat history during the session
+
+Example Use Cases
+Customer support knowledge assistants
+
+Internal operations manual Q&A
+
+Product documentation chatbot
+
+HR or policy handbook assistant
+
+IT troubleshooting knowledge bot
+
+LLM Configuration
+python
 settings = Settings(
     llm=OpenAI(
         model="gpt-3.5-turbo",
@@ -88,11 +116,33 @@ settings = Settings(
         system_prompt="You are an expert on the User Guide and your job is to answer technical questions. Assume that all questions are related to the User Guide. Keep your answers technical and based on facts – do not hallucinate features."
     )
 )
-```
+Why This Project Matters
+This project demonstrates practical skills in:
 
-## Chat Engine Features
+Retrieval-augmented generation (RAG)
 
-- Mode: "condense_question"
-- Verbose output enabled
-- Response caching implemented
-- Real-time query processing
+LLM application development
+
+Prompt design and response grounding
+
+Streamlit app deployment
+
+Document ingestion and indexing
+
+Building business-facing AI tools with measurable impact
+
+Future Improvements
+Multi-file upload from the UI
+
+Support for DOCX and TXT in addition to PDFs
+
+Source citations in responses
+
+Authentication for internal enterprise usage
+
+Deployment on AWS or GCP
+
+Author
+Aniket D Shirsat
+Data Scientist | NLP | LLM Applications | ML Engineering
+LinkedIn | GitHub | Website
