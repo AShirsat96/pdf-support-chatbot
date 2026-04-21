@@ -27,12 +27,12 @@ pip install streamlit llama_index openai nltk
 2. Data Directory:
    - Place your documents in the following directory:
    ```
-   C:/Users/Aniket/Documents/MyPythonProjects/Chatbot_UsingPrivateData/data
+   <Directory Path for your documents here>
    ```
 
 3. Page Configuration:
    - Title: "Aniket Solutions Chatbot"
-   - Logo Path: "C:/Users/Aniket/Documents/Aniket Solutions/AS-logos/AS-logos_transparent.png"
+   - Logo Path: "add your logo path here"
    - Layout: Centered
    - Initial Sidebar State: Auto
 
